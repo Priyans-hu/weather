@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon_io/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon_io/favicon-16x16.png">
+    <link rel="manifest" href="assets/favicon_io/site.webmanifest">
+    <title>SkyView | Weather App</title>
+    <link rel="stylesheet" href="css/background.css">
+</head>
+
+<body class="bg-light text-light p-4 sunny">
+
+    <nav class="navbar navbar-expand-lg">
+        <a class="navbar-brand" href="#">
+            <h1 class="text-md-left">SkyView <span class="text-light h4">- Weather App</span></h1>
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <form class="form-inline my-2 my-lg-0 ml-auto">
+                <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search"
+                    id="SearchBox">
+                <button class="btn text-white bg-primary my-2 my-sm-0" type="submit" id="submit">Search</button>
+            </form>
+        </div>
+    </nav>
+
+    <div class="container my-5 align-middle" style="min-height: 100%;">
+        <div class="card text-light text-center w-75 mx-auto" id="tempCard">
+            <div class="card-body">
+                <h1 class="card-title display-2 font-weight-normal text-capitalize" id="cityName"></h1>
+                <p class="card-subtitle text-light"><span id="regionName"></span>, <span id="countryName"></span>
+                </p>
+                <h1 class="display-1"><span id="currTemp">Loading</span></h1>
+                <p class="card-subtitle h5 text-light">Currently feels like <span class="font-weight-bold"
+                        id="feelsLike"></span>.</p>
+                <div class="container text-left my-5">
+                    <h3 class="h3 text-center my-2">Additional Info</h3>
+                    <table class="table h5">
+                        <tbody>
+                            <tr>
+                                <th scope="row">Last updated</th>
+                                <td><span id="lastUpdated"></span></td>
+                            </tr>
+                            <tr>
+                                <th scope="row">Status</th>
+                                <td><span id="status"></span></td>
+                            </tr>
+                            <tr>
+                                <th scope="row">Humidity</th>
+                                <td><span id="humidity"></span></td>
+                            </tr>
+                            <tr>
+                                <th scope="row">Wind</th>
+                                <td><span id="windSpd"></span> Km/h <span id="windDir"></span></td>
+                            </tr>
+                            <tr>
+                                <th scope="row">Precipitation</th>
+                                <td><span id="precip"></span></td>
+                            </tr>
+                            <tr>
+                                <th scope="row">UV Index</th>
+                                <td><span id="uv"></span></td>
+                            <tr>
+                                <th scope="row">Visibilty</th>
+                                <td><span id="visibility"></span> Km</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+
+</body>
+<script src="js/weatherapi.js"></script>
+
+</html>

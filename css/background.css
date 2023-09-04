@@ -1,0 +1,52 @@
+body {
+    overflow-x: hidden;
+    transition: all 0.5s;
+    min-height: 100vh;
+}
+
+.night {
+    background: url(../assets/night.jpg) no-repeat;
+    background-size: cover;
+}
+
+.sunny {
+    background: url(../assets/sunny.jpg) no-repeat;
+    background-size: cover;
+}
+
+.winter {
+    background: url(../assets/winter.jpg) no-repeat;
+    background-size: cover;
+}
+
+.rainy {
+    background: url(../assets/rainy.jpg) no-repeat;
+    background-size: cover;
+}
+
+.cloudy {
+    background: url(../assets/cloudy.jpg) no-repeat;
+    background-size: cover;
+}
+
+#tempCard {
+    border-radius: 1em;
+    backdrop-filter: blur(10px);
+    background: rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+}
+
+@media only screen and (max-width: 900px) {
+    .sunny {
+        background: url(../assets/sunny-mobile.jpg) no-repeat;
+        background-size: cover;
+    }
+    .winter {
+        background: url(../assets/winter-mobile.jpg) no-repeat;
+        background-size: cover;
+    }
+    .rainy {
+        background: url(../assets/rainy-mobile.jpg) no-repeat;
+        background-size: cover;
+    }
+}
