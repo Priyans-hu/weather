@@ -14,7 +14,7 @@
     <link rel="stylesheet" href="css/background.css">
 </head>
 
-<body class="bg-white text-white py-4 sunny transition-all duration-300">
+<body class="bg-white text-white py-4 sunny transition-all duration-300 min-h-screen">
 
     <nav class="p-4 lg:px-auto">
         <div class="container mx-auto flex flex-col lg:flex-row justify-between items-center">
@@ -47,7 +47,7 @@
     </nav>
 
 
-    <div class="container mx-auto my-5">
+    <div class="container mx-auto my-5 flex flex-grow">
         <div class="bg-gray-800 text-white text-center w-4/5 md:w-2/3 lg:w-1/2 mx-auto p-4 px-3 md:px-8 rounded-lg" id="tempCard">
             <div class="card-body">
                 <h1 class="text-4xl md:text-7xl py-3 capitalize" id="cityName"></h1>
@@ -57,7 +57,7 @@
                 <div class="container text-left my-5 px-1 md:px-4">
                     <h3 class="text-2xl text-center my-2 pt-6 pb-2 font-bold">Additional Info</h3>
                     <table class="flex table table-auto min-w-full m-2 font-sans">
-                        <tbody class="font-bold">
+                        <tbody class="md:font-bold">
                             <tr class="border-t border-b border-white border-spacing-4 m-4">
                                 <td scope="row" class="font-bold py-2.5">Last updated</td>
                                 <td><span id="lastUpdated"></span></td>
@@ -92,6 +92,12 @@
             </div>
         </div>
     </div>
+
+    <footer class="py-4 mt-auto">
+        <div class="container mx-auto text-center text-gray-300">
+            Made with ❤️ by Priyanshu
+        </div>
+    </footer>
 
     <script src="js/weatherapi.js"></script>
     <script src="js/getLocation.js"></script>
