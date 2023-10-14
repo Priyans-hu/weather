@@ -71,7 +71,7 @@ async function fetchData(city) {
     try {
         const response = await fetch(url, options);
         const result = await response.json();
-        console.log(result);
+        console.log(city);
         // calling the update function to update all the values in webpage
         update(result);
         updateBG(result.current.temp_c, result.current.condition.text, result.current.is_day);
