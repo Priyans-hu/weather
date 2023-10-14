@@ -13,8 +13,10 @@ const Precipitation = document.getElementById("precip");
 const WindDirection = document.getElementById("windDir");
 const LastUpdated = document.getElementById("lastUpdated");
 const CountryName = document.getElementById("countryName");
+const WeatherDataContainer = document.getElementById("weatherDataContainer");
 
 function update(result, city) {
+    WeatherDataContainer.style.display = "initial";
     cityName.innerText = city;
     CurrTemp.innerText = result.current.temp_c + "°";
     Humidity.innerText = result.current.humidity + "%";
@@ -28,6 +30,13 @@ function update(result, city) {
     Visibility.innerText = result.current.vis_km;
     RegionName.innerText = result.location.region;
     CountryName.innerText = result.location.country;
+}
+
+function updateOnError(city){
+    cityName.innerText = "Invalid city";
+    RegionName.innerText = city;
+    CountryName.innerText = "No data found for this";
+    WeatherDataContainer.style.display = "none";
 }
 
 function updateBG(temp, cond, isDay){
@@ -67,6 +76,7 @@ async function fetchData(city) {
         update(result, city);
         updateBG(result.current.temp_c, result.current.condition.text, result.current.is_day);
     } catch (error) {
+        updateOnError(city);
         console.error(error);
     }
 }
@@ -79,3 +89,7 @@ submit.addEventListener("click", (e) => {
     cityName.innerText = SearchBox.value;
     SearchBox.value = null;
 });
+
+const autoRefresh = setInterval(() => {
+    fetchData(cityName.innerText);
+}, 30 * 60 * 1000);
