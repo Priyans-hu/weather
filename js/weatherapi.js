@@ -15,9 +15,9 @@ const LastUpdated = document.getElementById("lastUpdated");
 const CountryName = document.getElementById("countryName");
 const WeatherDataContainer = document.getElementById("weatherDataContainer");
 
-function update(result, city) {
+function update(result) {
     WeatherDataContainer.style.display = "initial";
-    cityName.innerText = city;
+    cityName.innerText = result.location.name;
     CurrTemp.innerText = result.current.temp_c + "°";
     Humidity.innerText = result.current.humidity + "%";
     Condition.innerText = result.current.condition.text;
@@ -73,7 +73,7 @@ async function fetchData(city) {
         const result = await response.json();
         console.log(result);
         // calling the update function to update all the values in webpage
-        update(result, city);
+        update(result);
         updateBG(result.current.temp_c, result.current.condition.text, result.current.is_day);
     } catch (error) {
         updateOnError(city);
